@@ -40,9 +40,8 @@ RUN cd ~ && \
 # RUN cd /root/your_app_or_whatever && \
 #     pip3 install -r requirements.txt
 # RUN whatever_command_you_run_to_start_your_app
-
-COPY . /root/face_recognition
-RUN cd /root/face_recognition && \
+RUN git clone --single-branch https://github.com/BadSprite/face_recognition.git
+RUN cd /face_recognition && \
     pip3 install -r requirements.txt && \
     python3 setup.py install
 
